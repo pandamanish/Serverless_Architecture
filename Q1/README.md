@@ -25,7 +25,9 @@ Assigned the following tags to the instances during creation:
 Instance 1: Action = Auto-Stop
 Instance 2: Action = Auto-Start
 Note the Instance IDs for validation after testing.
+
 ![Alt text](Q1/Auto_Start.PNG)
+
 ![Alt text](Q1/Auto_stop_setup.PNG)
 
 2. Create a Lambda Function
