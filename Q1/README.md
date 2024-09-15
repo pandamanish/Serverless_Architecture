@@ -26,9 +26,9 @@ Instance 1: Action = Auto-Stop
 Instance 2: Action = Auto-Start
 Note the Instance IDs for validation after testing.
 
-![Alt text](Q1/Auto_Start.PNG)
+![Alt text](Auto_Start.PNG)
 
-![Alt text](Q1/Auto_stop_setup.PNG)
+![Alt text](Auto_stop_setup.PNG)
 
 2. Create a Lambda Function
 
@@ -43,7 +43,7 @@ Selected Python 3.12 as the runtime.
 Under Permissions, selected one of the existing IAM role created.
 And then created the function.
 
-![Alt text](Q1/AWS_Lambda.PNG)
+![Alt text](AWS_Lambda.PNG)
 
 3. Written the Lambda Function Code which will have these below features.
   Stop Instances: The function checks for instances tagged Auto-Stop that are running and stops them.
@@ -62,5 +62,5 @@ Didn't need to pass any specific input, so I can use the default test event.
 Verifed Results:
 Opened the EC2 Dashboard.
 Ensured the instance tagged as Auto-Stop is now stopped, and the instance tagged as Auto-Start is running.
-![Alt text](Q1/Auto_Start_output.PNG)
-![Alt text](Q1/Auto_stop.PNG)
+![Alt text](Auto_Start_output.PNG)
+![Alt text](Auto_stop.PNG)
