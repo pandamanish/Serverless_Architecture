@@ -40,8 +40,7 @@ The function will:
   List all log files in the bucket.
   Check if each log file is older than 90 days.
   Delete log files older than 90 days.
-  !
-  [Alt text](S3_cleanup_lambda.PNG)
+
 
 3. Scheduled the Function Using AWS EventBridge
 Opened the AWS EventBridge Console:
