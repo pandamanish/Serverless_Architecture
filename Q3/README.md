@@ -30,7 +30,7 @@ Assign the existing IAM role earlier.
 Click Create function.
 3. Lambda Function Code
 Boto3 Python script to monitor unencrypted S3 buckets
-![Alt text](Q3/Server_side_lambda.PNG)
+![Alt text](Server_side_lambda.PNG)
 
 5. Manual Invocation and Testing
 Saved the Lambda function code.
