@@ -21,15 +21,15 @@ Basic knowledge of Python and Boto3.
 
 # Steps
 1. Created a New Lambda Function
-Navigate to the AWS Lambda Console:
+Navigated to the AWS Lambda Console:
 
 Open the AWS Lambda dashboard.
 
-Create a New Lambda Function:
+Created a New Lambda Function:
 Clicked on Create Function.
 Choose Author from scratch.
-Enter a function name (manishs3lambda).
-Select Python 3.12 as the runtime.
+Entered a function name (manishs3lambda).
+Selected Python 3.12 as the runtime.
 Under Permissions, choosen existing role with basic Lambda permissions.
 Click Create function.
 
@@ -41,8 +41,10 @@ The function will:
   Check if each log file is older than 90 days.
   Delete log files older than 90 days.
 
+3.Added S3/manishs3 bucket as trigger for lambda. 
 
-3. Scheduled the Function Using AWS EventBridge
+
+4. Scheduled the Function Using AWS EventBridge
 Opened the AWS EventBridge Console:
 
 Navigate to the EventBridge dashboard.
@@ -54,22 +56,22 @@ Choosen Event Source as Schedule.
 Set the schedule expression to rate for weekly FRI runs.
 Added Target:
 
-Under Targets, click Add target.
-Choose Lambda function and selected our newly created Lambda function.
+Under Targets, clicked Add target.
+Choosen Lambda function and selected our newly created Lambda function.
 Clicked Create to save the rule.
 ![Alt text](Event_bridge.PNG)
 
 But had authorization issue so couldn't make it.
 ![Alt text](Unauthprized.PNG)
 
-5. Test the Lambda Function
-Upload test log files to your S3 bucket, ensuring some files are older than 90 days.
-Manually invoke the Lambda function from the AWS Lambda console to test if the function correctly identifies and deletes older files.
+5. Tested the Lambda Function
+Uploaded test log files to your S3 bucket, ensuring some files are older than 90 days.
+Manually invoked the Lambda function from the AWS Lambda console to test if the function correctly identifies and deletes older files.
 Just to check if the code was working fine we tweeked the code and changes the timedelta to 5min , as whichever files before 5min will be deleted.
 ![Alt text](log_file.PNG)
 ![Alt text](delete_log.PNG)
 
-7. Verify the Results
-Check the contents of the S3 bucket after the function execution.
-Ensure that log files older than 90 days have been deleted.
-Review the Lambda logs in CloudWatch to confirm successful execution and file deletions.
+# Verify the Results
+Checked the contents of the S3 bucket after the function execution.
+Ensured that log files older than 90 days have been deleted.
+Reviewed the Lambda logs in CloudWatch to confirm successful execution and file deletions.
