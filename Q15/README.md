@@ -66,8 +66,8 @@ But had authorization issue so couldn't make it.
 Upload test log files to your S3 bucket, ensuring some files are older than 90 days.
 Manually invoke the Lambda function from the AWS Lambda console to test if the function correctly identifies and deletes older files.
 Just to check if the code was working fine we tweeked the code and changes the timedelta to 5min , as whichever files before 5min will be deleted.
-![Alt text](before_cleanup.PNG)
-![Alt text](Deleted_s3_output.PNG)
+![Alt text](log_file.PNG)
+![Alt text](delete_log.PNG)
 
 7. Verify the Results
 Check the contents of the S3 bucket after the function execution.
