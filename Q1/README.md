@@ -18,40 +18,32 @@ Basic knowledge of Python and Boto3.
 
 # Steps 
 1. EC2 Setup
-Launch Two EC2 Instances:
-Go to the EC2 Dashboard in the AWS Management Console.
-Launch two t2.micro EC2 instances (or any available free-tier instance type).
-Assign the following tags to the instances during creation:
+Launched Two EC2 Instances:
+Gone to the EC2 Dashboard in the AWS Management Console.
+Launched two t2.micro EC2 instances (or any available free-tier instance type).
+Assigned the following tags to the instances during creation:
 Instance 1: Action = Auto-Stop
 Instance 2: Action = Auto-Start
 Note the Instance IDs for validation after testing.
-2. IAM Role for Lambda
-Navigate to IAM Dashboard:
+![Alt text](Q1/Auto_Start.PNG)
+![Alt text](Q1/Auto_stop_setup.PNG)
 
-Open the AWS IAM dashboard.
-Create a Role for Lambda:
+2. Create a Lambda Function
 
-Click Roles > Create role.
-Choose Lambda as the trusted entity.
-Attach Permissions:
+Navigated to the AWS Lambda Console:
+Opened the AWS Lambda dashboard.
 
-Attach the AmazonEC2FullAccess policy to the role. (In production environments, it's recommended to restrict permissions using a custom policy with only the necessary actions.)
-Create the Role:
+Created a New Lambda Function:
+Clicked on Create function.
+Choosen Author from scratch.
+Entered the function name.(manish_lambda_fun)
+Selected Python 3.12 as the runtime.
+Under Permissions, selected one of the existing IAM role created.
+And then created the function.
 
-Name the role (e.g., lambda-ec2-management-role) and create it.
-3. Create a Lambda Function
-Navigate to the AWS Lambda Console:
+![Alt text](Q1/AWS_Lambda.PNG)
 
-Open the AWS Lambda dashboard.
-Create a New Lambda Function:
-
-Click Create function.
-Choose Author from scratch.
-Enter the function name (e.g., manage-ec2-instances).
-Select Python 3.x as the runtime.
-Under Permissions, select the IAM role created in the previous step.
-
-4. Write the Lambda Function Code
+3. Written the Lambda Function Code which will have these below features.
   Stop Instances: The function checks for instances tagged Auto-Stop that are running and stops them.
   Start Instances: It looks for instances tagged Auto-Start that are stopped and starts them.
   Logging: The function logs the instance IDs that were stopped or started for easier monitoring.
@@ -60,12 +52,13 @@ Under Permissions, select the IAM role created in the previous step.
 # Deploy the Function:
 
 Clicked Deploy to save and deploy the function after writing the code.
+
 Manual Invocation:
-
 Created a test event and manually triggerd the Lambda function.
-You don't need to pass any specific input, so you can use the default test event.
-Verify Results:
+Didn't need to pass any specific input, so I can use the default test event.
 
-Open the EC2 Dashboard.
-Ensure the instance tagged as Auto-Stop is now stopped, and the instance tagged as Auto-Start is running.
-
+Verifed Results:
+Opened the EC2 Dashboard.
+Ensured the instance tagged as Auto-Stop is now stopped, and the instance tagged as Auto-Start is running.
+![Alt text](Q1/Auto_Start_output.PNG)
+![Alt text](Q1/Auto_stop.PNG)
